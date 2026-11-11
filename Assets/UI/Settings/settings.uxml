@@ -1,0 +1,165 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+	<ui:Style src="base.uss" />
+	<ui:Style src="theme.uss" />
+	<ui:VisualElement class="screen settings-screen">
+		<ui:VisualElement class="settings-panel">
+			<ui:VisualElement class="settings-header">
+				<ui:Label text="← Main menu" class="link back-link" href="index.html" />
+				<ui:VisualElement class="settings-heading">
+					<ui:Label text="Settings" class="settings-title" />
+					<ui:Label text="Profile: Runner-01 · changes apply immediately" class="settings-subtitle" />
+				</ui:VisualElement>
+				<ui:VisualElement class="build-stamp">
+					<ui:Label text="Draft" class="label" />
+					<ui:Label text="unsaved" class="build-id" />
+					<ui:Label text="10 Nov 2026" class="build-time" datetime="2026-11-10" />
+				</ui:VisualElement>
+			</ui:VisualElement>
+			<ui:VisualElement class="settings-body">
+				<ui:VisualElement class="settings-sidebar" aria-label="Settings sections">
+					<ui:VisualElement class="menu-list">
+						<ui:VisualElement class="menu-row">
+							<ui:Button class="menu-item is-primary data-key:tab-audio" type="button">
+								<ui:Label text="Audio" class="menu-label" />
+								<ui:Label text="Mix · Subtitles" class="menu-hint" />
+							</ui:Button>
+						</ui:VisualElement>
+						<ui:VisualElement class="menu-row">
+							<ui:Button class="menu-item data-key:tab-video" type="button">
+								<ui:Label text="Video" class="menu-label" />
+								<ui:Label text="Display · Effects" class="menu-hint" />
+							</ui:Button>
+						</ui:VisualElement>
+						<ui:VisualElement class="menu-row">
+							<ui:Button class="menu-item data-key:tab-controls" type="button">
+								<ui:Label text="Controls" class="menu-label" />
+								<ui:Label text="Mouse · Input" class="menu-hint" />
+							</ui:Button>
+						</ui:VisualElement>
+						<ui:VisualElement class="menu-row">
+							<ui:Button class="menu-item data-key:tab-gameplay" type="button">
+								<ui:Label text="Gameplay" class="menu-label" />
+								<ui:Label text="Difficulty · Aids" class="menu-hint" />
+							</ui:Button>
+						</ui:VisualElement>
+					</ui:VisualElement>
+					<ui:VisualElement class="divider" />
+					<ui:Label text="Placeholder values — nothing here is saved or read by a script." class="settings-note" />
+				</ui:VisualElement>
+				<ui:VisualElement class="settings-content" aria-label="Audio settings">
+					<ui:Label text="Audio" class="section-heading" />
+					<ui:VisualElement class="setting-row">
+						<ui:VisualElement class="setting-text">
+							<ui:Label text="Master volume" class="setting-label" />
+							<ui:Label text="All game output" class="setting-hint" />
+						</ui:VisualElement>
+						<ui:Slider class="field-slider setting-control" low-value="0" high-value="100" type="range" value="70" min="0" max="100" />
+					</ui:VisualElement>
+					<ui:VisualElement class="setting-row">
+						<ui:VisualElement class="setting-text">
+							<ui:Label text="Music" class="setting-label" />
+							<ui:Label text="Score and ambience" class="setting-hint" />
+						</ui:VisualElement>
+						<ui:Slider class="field-slider setting-control" low-value="0" high-value="100" type="range" value="45" min="0" max="100" />
+					</ui:VisualElement>
+					<ui:VisualElement class="setting-row">
+						<ui:VisualElement class="setting-text">
+							<ui:Label text="Effects" class="setting-label" />
+							<ui:Label text="Weapons, doors, alarms" class="setting-hint" />
+						</ui:VisualElement>
+						<ui:Slider class="field-slider setting-control" low-value="0" high-value="100" type="range" value="85" min="0" max="100" />
+					</ui:VisualElement>
+					<ui:VisualElement class="setting-row">
+						<ui:VisualElement class="setting-text">
+							<ui:Label text="Dynamic range" class="setting-label" />
+							<ui:Label text="Compression preset" class="setting-hint" />
+						</ui:VisualElement>
+						<ui:DropdownField class="field-select setting-control" choices="Night,Standard,Cinema" aria-label="Dynamic range" />
+					</ui:VisualElement>
+					<ui:VisualElement class="setting-row">
+						<ui:VisualElement class="setting-text">
+							<ui:Label text="Subtitles" class="setting-label" />
+							<ui:Label text="Show dialogue text" class="setting-hint" />
+						</ui:VisualElement>
+						<ui:Toggle class="toggle-input" checked="" type="checkbox" />
+					</ui:VisualElement>
+					<ui:Label text="Video" class="section-heading" />
+					<ui:VisualElement class="setting-row">
+						<ui:VisualElement class="setting-text">
+							<ui:Label text="Display mode" class="setting-label" />
+							<ui:Label text="Window behaviour" class="setting-hint" />
+						</ui:VisualElement>
+						<ui:DropdownField class="field-select setting-control" choices="Fullscreen,Borderless,Windowed" aria-label="Display mode" />
+					</ui:VisualElement>
+					<ui:VisualElement class="setting-row">
+						<ui:VisualElement class="setting-text">
+							<ui:Label text="Resolution" class="setting-label" />
+							<ui:Label text="Ignored in borderless" class="setting-hint" />
+						</ui:VisualElement>
+						<ui:DropdownField class="field-select setting-control" choices="1920 × 1080,2560 × 1440,3840 × 2160" aria-label="Resolution" />
+					</ui:VisualElement>
+					<ui:VisualElement class="setting-row">
+						<ui:VisualElement class="setting-text">
+							<ui:Label text="Frame rate cap" class="setting-label" />
+							<ui:Label text="0 means uncapped" class="setting-hint" />
+						</ui:VisualElement>
+						<ui:IntegerField class="field-number setting-control" type="number" value="120" min="0" max="240" />
+					</ui:VisualElement>
+					<ui:VisualElement class="setting-row">
+						<ui:VisualElement class="setting-text">
+							<ui:Label text="Motion blur" class="setting-label" />
+							<ui:Label text="Camera post-process" class="setting-hint" />
+						</ui:VisualElement>
+						<ui:VisualElement class="radio-group">
+							<ui:RadioButton class="radio-input" checked="" name="motion-blur" type="radio" value="off" />
+							<ui:Label text="Off" class="radio-label" />
+							<ui:RadioButton class="radio-input" name="motion-blur" type="radio" value="low" />
+							<ui:Label text="Low" class="radio-label" />
+							<ui:RadioButton class="radio-input" name="motion-blur" type="radio" value="high" />
+							<ui:Label text="High" class="radio-label" />
+						</ui:VisualElement>
+					</ui:VisualElement>
+					<ui:Label text="Controls" class="section-heading" />
+					<ui:VisualElement class="setting-row">
+						<ui:VisualElement class="setting-text">
+							<ui:Label text="Mouse sensitivity" class="setting-label" />
+							<ui:Label text="0.1 – 5.0" class="setting-hint" />
+						</ui:VisualElement>
+						<ui:Slider class="field-slider setting-control" low-value="1" high-value="50" type="range" value="22" min="1" max="50" />
+					</ui:VisualElement>
+					<ui:VisualElement class="setting-row">
+						<ui:VisualElement class="setting-text">
+							<ui:Label text="Invert vertical axis" class="setting-label" />
+							<ui:Label text="Flight and turret aiming" class="setting-hint" />
+						</ui:VisualElement>
+						<ui:Toggle class="toggle-input" type="checkbox" />
+					</ui:VisualElement>
+					<ui:VisualElement class="setting-row">
+						<ui:VisualElement class="setting-text">
+							<ui:Label text="Hold to sprint" class="setting-label" />
+							<ui:Label text="Off: toggle sprint" class="setting-hint" />
+						</ui:VisualElement>
+						<ui:Toggle class="toggle-input" checked="" type="checkbox" />
+					</ui:VisualElement>
+					<ui:VisualElement class="setting-row">
+						<ui:VisualElement class="setting-text">
+							<ui:Label text="Aim assist" class="setting-label" />
+							<ui:Label text="Controller only" class="setting-hint" />
+						</ui:VisualElement>
+						<ui:DropdownField class="field-select setting-control" choices="Off,Light,Full" aria-label="Aim assist" />
+					</ui:VisualElement>
+				</ui:VisualElement>
+			</ui:VisualElement>
+			<ui:VisualElement class="settings-footer">
+				<ui:VisualElement class="footer-nav" aria-label="Settings navigation">
+					<ui:Label text="Back to main menu" class="link" href="index.html" />
+					<ui:Label text="Resume run" class="link link-muted" href="pause.html" />
+				</ui:VisualElement>
+				<ui:VisualElement class="button-row">
+					<ui:Button text="Reset" class="button button-ghost data-key:reset" type="button" />
+					<ui:Button text="Apply" class="button button-primary data-key:apply" type="button" />
+				</ui:VisualElement>
+			</ui:VisualElement>
+		</ui:VisualElement>
+	</ui:VisualElement>
+</ui:UXML>

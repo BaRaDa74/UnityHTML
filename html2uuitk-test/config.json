@@ -1,0 +1,17 @@
+{
+  "assets": {
+    "Rubik": {
+      "path": "project://database/Assets/Fonts/Rubik-Regular.ttf"
+    },
+    "Space Mono": {
+      "path": "project://database/Assets/Fonts/SpaceMono-Regular.ttf"
+    }
+  },
+  "options": {
+    "uppercase": false,
+    "substituteVariables": false,
+    "focusable": true,
+    "dataAttributes": true,
+    "styleLinks": true
+  }
+}

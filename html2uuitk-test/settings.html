@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Voidrunner — Settings</title>
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body>
+  <div class="screen settings-screen">
+    <section class="settings-panel">
+      <header class="settings-header">
+        <a class="link back-link" href="index.html">← Main menu</a>
+        <div class="settings-heading">
+          <h1 class="settings-title">Settings</h1>
+          <p class="settings-subtitle">Profile: Runner-01 · changes apply immediately</p>
+        </div>
+        <div class="build-stamp">
+          <span class="label">Draft</span>
+          <code class="build-id">unsaved</code>
+          <time class="build-time" datetime="2026-11-10">10 Nov 2026</time>
+        </div>
+      </header>
+
+      <div class="settings-body">
+        <nav class="settings-sidebar" aria-label="Settings sections">
+          <ul class="menu-list">
+            <li class="menu-row">
+              <button class="menu-item is-primary" type="button" data-key="tab-audio">
+                <span class="menu-label">Audio</span>
+                <span class="menu-hint">Mix · Subtitles</span>
+              </button>
+            </li>
+            <li class="menu-row">
+              <button class="menu-item" type="button" data-key="tab-video">
+                <span class="menu-label">Video</span>
+                <span class="menu-hint">Display · Effects</span>
+              </button>
+            </li>
+            <li class="menu-row">
+              <button class="menu-item" type="button" data-key="tab-controls">
+                <span class="menu-label">Controls</span>
+                <span class="menu-hint">Mouse · Input</span>
+              </button>
+            </li>
+            <li class="menu-row">
+              <button class="menu-item" type="button" data-key="tab-gameplay">
+                <span class="menu-label">Gameplay</span>
+                <span class="menu-hint">Difficulty · Aids</span>
+              </button>
+            </li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <p class="settings-note">
+            Placeholder values — nothing here is saved or read by a script.
+          </p>
+        </nav>
+
+        <div class="settings-content" aria-label="Audio settings">
+          <h2 class="section-heading">Audio</h2>
+
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-label">Master volume</span>
+              <span class="setting-hint">All game output</span>
+            </div>
+            <input class="field-slider setting-control" type="range" min="0" max="100" value="70" />
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-label">Music</span>
+              <span class="setting-hint">Score and ambience</span>
+            </div>
+            <input class="field-slider setting-control" type="range" min="0" max="100" value="45" />
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-label">Effects</span>
+              <span class="setting-hint">Weapons, doors, alarms</span>
+            </div>
+            <input class="field-slider setting-control" type="range" min="0" max="100" value="85" />
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-label">Dynamic range</span>
+              <span class="setting-hint">Compression preset</span>
+            </div>
+            <select class="field-select setting-control" aria-label="Dynamic range">
+              <option value="night">Night</option>
+              <option value="standard">Standard</option>
+              <option value="cinema">Cinema</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-label">Subtitles</span>
+              <span class="setting-hint">Show dialogue text</span>
+            </div>
+            <input class="toggle-input" type="checkbox" checked />
+          </div>
+
+          <h2 class="section-heading">Video</h2>
+
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-label">Display mode</span>
+              <span class="setting-hint">Window behaviour</span>
+            </div>
+            <select class="field-select setting-control" aria-label="Display mode">
+              <option value="fullscreen">Fullscreen</option>
+              <option value="borderless">Borderless</option>
+              <option value="windowed">Windowed</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-label">Resolution</span>
+              <span class="setting-hint">Ignored in borderless</span>
+            </div>
+            <select class="field-select setting-control" aria-label="Resolution">
+              <option value="1920x1080">1920 × 1080</option>
+              <option value="2560x1440">2560 × 1440</option>
+              <option value="3840x2160">3840 × 2160</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-label">Frame rate cap</span>
+              <span class="setting-hint">0 means uncapped</span>
+            </div>
+            <input class="field-number setting-control" type="number" min="0" max="240" step="30" value="120" />
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-label">Motion blur</span>
+              <span class="setting-hint">Camera post-process</span>
+            </div>
+            <div class="radio-group">
+              <input class="radio-input" type="radio" name="motion-blur" value="off" checked />
+              <label class="radio-label">Off</label>
+              <input class="radio-input" type="radio" name="motion-blur" value="low" />
+              <label class="radio-label">Low</label>
+              <input class="radio-input" type="radio" name="motion-blur" value="high" />
+              <label class="radio-label">High</label>
+            </div>
+          </div>
+
+          <h2 class="section-heading">Controls</h2>
+
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-label">Mouse sensitivity</span>
+              <span class="setting-hint">0.1 – 5.0</span>
+            </div>
+            <input class="field-slider setting-control" type="range" min="1" max="50" value="22" />
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-label">Invert vertical axis</span>
+              <span class="setting-hint">Flight and turret aiming</span>
+            </div>
+            <input class="toggle-input" type="checkbox" />
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-label">Hold to sprint</span>
+              <span class="setting-hint">Off: toggle sprint</span>
+            </div>
+            <input class="toggle-input" type="checkbox" checked />
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-text">
+              <span class="setting-label">Aim assist</span>
+              <span class="setting-hint">Controller only</span>
+            </div>
+            <select class="field-select setting-control" aria-label="Aim assist">
+              <option value="off">Off</option>
+              <option value="light">Light</option>
+              <option value="full">Full</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <footer class="settings-footer">
+        <nav class="footer-nav" aria-label="Settings navigation">
+          <a class="link" href="index.html">Back to main menu</a>
+          <a class="link link-muted" href="pause.html">Resume run</a>
+        </nav>
+        <div class="button-row">
+          <button class="button button-ghost" type="button" data-key="reset">Reset</button>
+          <button class="button button-primary" type="button" data-key="apply">Apply</button>
+        </div>
+      </footer>
+    </section>
+  </div>
+
+  <script>
+    // Intentionally present: the converter should skip <script>.
+    document.title = "Voidrunner — Settings";
+  </script>
+</body>
+</html>

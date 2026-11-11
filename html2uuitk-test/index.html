@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Voidrunner — Main Menu</title>
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body>
+  <div class="screen">
+    <header class="topbar">
+      <div class="brand">
+        <h1 class="game-title">Voidrunner</h1>
+        <p class="tagline">A test menu for the HTML → UI Toolkit pipeline</p>
+      </div>
+      <div class="build-stamp">
+        <span class="label">Build</span>
+        <code class="build-id">0.4.2-alpha</code>
+        <time class="build-time" datetime="2026-11-10">10 Nov 2026</time>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="hero">
+        <h2 class="hero-heading">Continue your run</h2>
+        <p class="hero-copy">
+          Chapter 3 — <strong>The Foundry</strong>. Your last checkpoint is
+          <em>twelve minutes</em> behind you and the reactor is still
+          <span class="highlight">unstable</span>.
+        </p>
+
+        <div class="progress-block">
+          <div class="progress-header">
+            <span class="label">Campaign progress</span>
+            <span class="progress-value">42%</span>
+          </div>
+          <progress value="42" max="100"></progress>
+        </div>
+
+        <aside class="tip">
+          <span class="tip-icon">i</span>
+          <p class="tip-copy">
+            Tip: hold <code>Shift</code> to dash. Hold <code>Space</code> to
+            hover.
+          </p>
+        </aside>
+      </section>
+
+      <section class="panel">
+        <nav class="menu-nav" aria-label="Main menu">
+          <ul class="menu-list">
+            <li class="menu-row">
+              <button class="menu-item is-primary" type="button" data-key="continue">
+                <span class="menu-label">Continue</span>
+                <span class="menu-hint">Chapter 3 · The Foundry</span>
+              </button>
+            </li>
+            <li class="menu-row">
+              <button class="menu-item" type="button" data-key="new-game">
+                <span class="menu-label">New Game</span>
+                <span class="menu-hint">Start a fresh run</span>
+              </button>
+            </li>
+            <li class="menu-row">
+              <button class="menu-item" type="button" data-key="load-game">
+                <span class="menu-label">Load Game</span>
+                <span class="menu-hint">3 saved runs</span>
+              </button>
+            </li>
+            <li class="menu-row">
+              <button class="menu-item" type="button" data-key="extras">
+                <span class="menu-label">Extras</span>
+                <span class="menu-hint">Codex · Gallery · Soundtrack</span>
+              </button>
+            </li>
+            <li class="menu-row">
+              <button class="menu-item is-danger" type="button" data-key="quit">
+                <span class="menu-label">Quit</span>
+                <span class="menu-hint">Return to desktop</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="divider"></div>
+
+        <section class="settings" aria-label="Quick settings">
+          <h3 class="section-heading">Quick settings</h3>
+
+          <div class="field">
+            <label class="field-label" for="callsign">Callsign</label>
+            <input id="callsign" class="field-input" type="text" value="Runner-01" placeholder="Enter callsign" />
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="master-volume">Master volume</label>
+            <input id="master-volume" class="field-slider" type="range" min="0" max="100" value="70" />
+          </div>
+
+          <div class="field field-inline">
+            <label class="field-label" for="resolution">Resolution</label>
+            <select id="resolution" class="field-select">
+              <option value="1920x1080">1920 × 1080</option>
+              <option value="2560x1440">2560 × 1440</option>
+              <option value="3840x2160">3840 × 2160</option>
+            </select>
+          </div>
+
+          <div class="field field-inline">
+            <label class="field-label" for="fov">Field of view</label>
+            <input id="fov" class="field-number" type="number" min="60" max="120" value="90" />
+          </div>
+
+          <div class="field">
+            <span class="field-label">Difficulty</span>
+            <div class="radio-group">
+              <input id="diff-easy" class="radio-input" type="radio" name="difficulty" value="easy" />
+              <label class="radio-label" for="diff-easy">Easy</label>
+              <input id="diff-normal" class="radio-input" type="radio" name="difficulty" value="normal" checked />
+              <label class="radio-label" for="diff-normal">Normal</label>
+              <input id="diff-hard" class="radio-input" type="radio" name="difficulty" value="hard" />
+              <label class="radio-label" for="diff-hard">Hard</label>
+            </div>
+          </div>
+
+          <div class="toggle-group">
+            <input id="fullscreen" class="toggle-input" type="checkbox" checked />
+            <label class="toggle-label" for="fullscreen">Fullscreen</label>
+
+            <input id="vsync" class="toggle-input" type="checkbox" />
+            <label class="toggle-label" for="vsync">V-Sync</label>
+
+            <input id="subtitles" class="toggle-input" type="checkbox" checked />
+            <label class="toggle-label" for="subtitles">Subtitles</label>
+          </div>
+
+          <div class="button-row">
+            <button class="button button-primary" type="button" data-key="apply">Apply</button>
+            <button class="button button-ghost" type="button" data-key="reset">Reset</button>
+            <a class="link" href="settings.html">Advanced settings</a>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="legal">
+        <small>© 2026 Fake Skate Studio. Not a real game.</small>
+      </p>
+      <nav class="footer-nav" aria-label="Legal">
+        <a class="link link-muted" href="#privacy">Privacy</a>
+        <a class="link link-muted" href="#terms">Terms</a>
+        <a class="link link-muted" href="#credits">Credits</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    // Intentionally present: the converter should skip <script>.
+    document.title = "Voidrunner — Main Menu";
+  </script>
+</body>
+</html>

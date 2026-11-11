@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Voidrunner — Paused</title>
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body>
+  <div class="screen overlay-screen">
+    <section class="pause-panel">
+      <header class="pause-header">
+        <div class="pause-heading">
+          <h1 class="pause-title">Paused</h1>
+          <p class="pause-subtitle">Chapter 3 — The Foundry · Checkpoint 07</p>
+        </div>
+        <div class="build-stamp">
+          <span class="label">Session</span>
+          <code class="build-id">01:42:18</code>
+          <time class="build-time" datetime="2026-11-10">10 Nov 2026</time>
+        </div>
+      </header>
+
+      <div class="pause-body">
+        <nav class="pause-nav" aria-label="Pause menu">
+          <ul class="menu-list">
+            <li class="menu-row">
+              <button class="menu-item is-primary" type="button" data-key="resume">
+                <span class="menu-label">Resume</span>
+                <span class="menu-hint">Back to the reactor floor</span>
+              </button>
+            </li>
+            <li class="menu-row">
+              <button class="menu-item" type="button" data-key="settings">
+                <span class="menu-label">Settings</span>
+                <span class="menu-hint">Audio · Video · Controls</span>
+              </button>
+            </li>
+            <li class="menu-row">
+              <button class="menu-item" type="button" data-key="restart">
+                <span class="menu-label">Restart Checkpoint</span>
+                <span class="menu-hint">Lose progress since 07</span>
+              </button>
+            </li>
+            <li class="menu-row">
+              <button class="menu-item is-danger" type="button" data-key="main-menu">
+                <span class="menu-label">Quit to Main Menu</span>
+                <span class="menu-hint">Run is saved automatically</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="pause-details">
+          <h2 class="section-heading">This run</h2>
+
+          <div class="stat-list">
+            <div class="stat-row">
+              <span class="stat-term">Chapter</span>
+              <span class="stat-value">The Foundry</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-term">Playtime</span>
+              <span class="stat-value">1h 42m</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-term">Deaths</span>
+              <span class="stat-value">14</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-term">Collectibles</span>
+              <span class="stat-value">9 / 20</span>
+            </div>
+          </div>
+
+          <div class="pause-figure">
+            <p class="quote">
+              “The reactor will not hold much longer. Whatever you are going to
+              do, do it now.”
+            </p>
+            <p class="quote-source">— Chief Engineer Vale</p>
+          </div>
+
+          <div class="rule"></div>
+
+          <div class="quick-audio">
+            <h2 class="quick-audio-legend">Audio</h2>
+
+            <div class="field">
+              <label class="field-label" for="pause-volume">Master volume</label>
+              <input id="pause-volume" class="field-slider" type="range" min="0" max="100" value="70" />
+            </div>
+
+            <div class="field field-inline">
+              <label class="field-label" for="pause-music">Music</label>
+              <select id="pause-music" class="field-select">
+                <option value="on">On</option>
+                <option value="reduced">Reduced</option>
+                <option value="off">Off</option>
+              </select>
+            </div>
+
+            <div class="toggle-group">
+              <input id="pause-subtitles" class="toggle-input" type="checkbox" checked />
+              <label class="toggle-label" for="pause-subtitles">Subtitles</label>
+
+              <input id="pause-mute" class="toggle-input" type="checkbox" />
+              <label class="toggle-label" for="pause-mute">Mute on focus loss</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="pause-footer">
+        <button class="button button-primary" type="button" data-key="resume-footer">Resume</button>
+        <div class="pause-footer-links">
+          <a class="link" href="settings.html">Controls</a>
+          <a class="link link-muted" href="#main-menu">Main menu</a>
+        </div>
+      </footer>
+    </section>
+  </div>
+
+  <script>
+    // Intentionally present: the converter should skip <script>.
+    document.title = "Voidrunner — Paused";
+  </script>
+</body>
+</html>

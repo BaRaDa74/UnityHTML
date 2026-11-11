@@ -1,0 +1,99 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+	<ui:Style src="base.uss" />
+	<ui:Style src="theme.uss" />
+	<ui:VisualElement class="screen overlay-screen">
+		<ui:VisualElement class="pause-panel">
+			<ui:VisualElement class="pause-header">
+				<ui:VisualElement class="pause-heading">
+					<ui:Label text="Paused" class="pause-title" />
+					<ui:Label text="Chapter 3 — The Foundry · Checkpoint 07" class="pause-subtitle" />
+				</ui:VisualElement>
+				<ui:VisualElement class="build-stamp">
+					<ui:Label text="Session" class="label" />
+					<ui:Label text="01:42:18" class="build-id" />
+					<ui:Label text="10 Nov 2026" class="build-time" datetime="2026-11-10" />
+				</ui:VisualElement>
+			</ui:VisualElement>
+			<ui:VisualElement class="pause-body">
+				<ui:VisualElement class="pause-nav" aria-label="Pause menu">
+					<ui:VisualElement class="menu-list">
+						<ui:VisualElement class="menu-row">
+							<ui:Button class="menu-item is-primary data-key:resume" type="button">
+								<ui:Label text="Resume" class="menu-label" />
+								<ui:Label text="Back to the reactor floor" class="menu-hint" />
+							</ui:Button>
+						</ui:VisualElement>
+						<ui:VisualElement class="menu-row">
+							<ui:Button class="menu-item data-key:settings" type="button">
+								<ui:Label text="Settings" class="menu-label" />
+								<ui:Label text="Audio · Video · Controls" class="menu-hint" />
+							</ui:Button>
+						</ui:VisualElement>
+						<ui:VisualElement class="menu-row">
+							<ui:Button class="menu-item data-key:restart" type="button">
+								<ui:Label text="Restart Checkpoint" class="menu-label" />
+								<ui:Label text="Lose progress since 07" class="menu-hint" />
+							</ui:Button>
+						</ui:VisualElement>
+						<ui:VisualElement class="menu-row">
+							<ui:Button class="menu-item is-danger data-key:main-menu" type="button">
+								<ui:Label text="Quit to Main Menu" class="menu-label" />
+								<ui:Label text="Run is saved automatically" class="menu-hint" />
+							</ui:Button>
+						</ui:VisualElement>
+					</ui:VisualElement>
+				</ui:VisualElement>
+				<ui:VisualElement class="pause-details">
+					<ui:Label text="This run" class="section-heading" />
+					<ui:VisualElement class="stat-list">
+						<ui:VisualElement class="stat-row">
+							<ui:Label text="Chapter" class="stat-term" />
+							<ui:Label text="The Foundry" class="stat-value" />
+						</ui:VisualElement>
+						<ui:VisualElement class="stat-row">
+							<ui:Label text="Playtime" class="stat-term" />
+							<ui:Label text="1h 42m" class="stat-value" />
+						</ui:VisualElement>
+						<ui:VisualElement class="stat-row">
+							<ui:Label text="Deaths" class="stat-term" />
+							<ui:Label text="14" class="stat-value" />
+						</ui:VisualElement>
+						<ui:VisualElement class="stat-row">
+							<ui:Label text="Collectibles" class="stat-term" />
+							<ui:Label text="9 / 20" class="stat-value" />
+						</ui:VisualElement>
+					</ui:VisualElement>
+					<ui:VisualElement class="pause-figure">
+						<ui:Label text="“The reactor will not hold much longer. Whatever you are going to do, do it now.”" class="quote" />
+						<ui:Label text="— Chief Engineer Vale" class="quote-source" />
+					</ui:VisualElement>
+					<ui:VisualElement class="rule" />
+					<ui:VisualElement class="quick-audio">
+						<ui:Label text="Audio" class="quick-audio-legend" />
+						<ui:VisualElement class="field">
+							<ui:Label text="Master volume" class="field-label" for="pause-volume" />
+							<ui:Slider class="field-slider" id="pause-volume" low-value="0" high-value="100" type="range" value="70" min="0" max="100" />
+						</ui:VisualElement>
+						<ui:VisualElement class="field field-inline">
+							<ui:Label text="Music" class="field-label" for="pause-music" />
+							<ui:DropdownField class="field-select" choices="On,Reduced,Off" id="pause-music" />
+						</ui:VisualElement>
+						<ui:VisualElement class="toggle-group">
+							<ui:Toggle class="toggle-input" id="pause-subtitles" checked="" type="checkbox" />
+							<ui:Label text="Subtitles" class="toggle-label" for="pause-subtitles" />
+							<ui:Toggle class="toggle-input" id="pause-mute" type="checkbox" />
+							<ui:Label text="Mute on focus loss" class="toggle-label" for="pause-mute" />
+						</ui:VisualElement>
+					</ui:VisualElement>
+				</ui:VisualElement>
+			</ui:VisualElement>
+			<ui:VisualElement class="pause-footer">
+				<ui:Button text="Resume" class="button button-primary data-key:resume-footer" type="button" />
+				<ui:VisualElement class="pause-footer-links">
+					<ui:Label text="Controls" class="link" href="settings.html" />
+					<ui:Label text="Main menu" class="link link-muted" href="#main-menu" />
+				</ui:VisualElement>
+			</ui:VisualElement>
+		</ui:VisualElement>
+	</ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,259 @@
+/* ---------------------------------------------------------------
+   theme.css — palette, controls and interaction states.
+   Exercises CSS variables (chains + fallbacks), shorthand
+   expansion, box-shadow, modern color syntax and rem/em/vw units.
+   --------------------------------------------------------------- */
+
+:root {
+  --bg: #0b1020;
+  --panel: rgba(14, 20, 38, 0.92);
+  --panel-soft: rgb(30 41 66 / 0.55);
+  --line: #223052;
+  --text: #e8edf7;
+  --muted: #8b98b4;
+  --accent: #4cc9f0;
+  --accent-strong: #2a9dc4;
+  --danger: #ff5c7c;
+  --warning: #ffb703;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --accent-glow: var(--accent);
+}
+
+/* --- Menu list -------------------------------------------------- */
+
+.menu-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-list {
+  margin: 0;
+  padding: 0;
+}
+
+.menu-row {
+  margin-bottom: 0.5rem;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: var(--radius);
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.menu-item:hover {
+  border-color: var(--accent);
+  background-color: var(--panel-soft);
+  color: var(--accent);
+}
+
+.menu-item:active {
+  background-color: rgb(76 201 240 / 0.18);
+  color: var(--accent-strong);
+}
+
+.menu-item:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(76, 201, 240, 0.55);
+}
+
+.menu-item.is-primary {
+  border-color: var(--accent);
+  background-color: rgb(76 201 240 / 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+.menu-item.is-danger {
+  color: var(--danger);
+}
+
+.menu-item.is-danger:hover {
+  border-color: var(--danger);
+  background-color: rgb(255 92 124 / 0.12);
+  color: var(--danger);
+}
+
+.menu-label {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.menu-hint {
+  margin-top: 0.125rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0px;
+  text-align: left;
+  color: var(--muted);
+}
+
+/* --- Settings --------------------------------------------------- */
+
+.section-heading {
+  margin: 0 0 1rem 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: left;
+  color: var(--muted);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.875rem;
+}
+
+.field-inline {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field-label {
+  margin-bottom: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.field-input,
+.field-select,
+.field-number {
+  padding: 0.5rem 0.75rem;
+  border-width: 1px;
+  border-color: var(--line);
+  border-radius: var(--radius-sm);
+  background-color: var(--panel-soft);
+  color: var(--text);
+  font-size: 0.875rem;
+}
+
+.field-input:focus,
+.field-select:focus,
+.field-number:focus {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.field-slider {
+  width: 100%;
+  height: 16px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.radio-input {
+  margin-right: 0.375rem;
+}
+
+.radio-label {
+  margin-right: 0.875rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.toggle-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--panel-soft);
+}
+
+.toggle-input {
+  margin-right: 0.375rem;
+}
+
+.toggle-label {
+  margin-right: 1rem;
+  font-size: 0.8125rem;
+  color: var(--text);
+}
+
+/* --- Buttons ---------------------------------------------------- */
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.button {
+  margin-right: 0.75rem;
+  padding: 0.625rem 1.25rem;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.button-primary {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+.button-primary:hover {
+  background-color: var(--accent-strong);
+}
+
+.button-primary:active {
+  background-color: #1d7e9f;
+}
+
+.button-ghost {
+  border-color: var(--line);
+  background-color: transparent;
+  color: var(--muted);
+}
+
+.button-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.link {
+  margin-right: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--accent-glow);
+  text-align: left;
+}
+
+.link:hover {
+  color: var(--text);
+}
+
+.link-muted {
+  margin-right: 1.25rem;
+  color: var(--muted);
+}
+
+.link-muted:hover {
+  color: var(--accent);
+}
+
+/* Reference a variable that does not exist to exercise fallbacks. */
+.legal {
+  color: var(--legal-color, var(--muted));
+}

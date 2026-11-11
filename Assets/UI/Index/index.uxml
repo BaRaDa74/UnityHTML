@@ -1,0 +1,138 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+	<ui:Style src="base.uss" />
+	<ui:Style src="theme.uss" />
+	<ui:VisualElement class="screen">
+		<ui:VisualElement class="topbar">
+			<ui:VisualElement class="brand">
+				<ui:Label text="Voidrunner" class="game-title" />
+				<ui:Label text="A test menu for the HTML → UI Toolkit pipeline" class="tagline" />
+			</ui:VisualElement>
+			<ui:VisualElement class="build-stamp">
+				<ui:Label text="Build" class="label" />
+				<ui:Label text="0.4.2-alpha" class="build-id" />
+				<ui:Label text="10 Nov 2026" class="build-time" datetime="2026-11-10" />
+			</ui:VisualElement>
+		</ui:VisualElement>
+		<ui:VisualElement class="content">
+			<ui:VisualElement class="hero">
+				<ui:Label text="Continue your run" class="hero-heading" />
+				<ui:Label class="hero-copy" style="flex-direction: row; flex-wrap: wrap;">
+					<ui:Label text="Chapter 3 —" />
+					<ui:Label text="The Foundry" />
+					<ui:Label text=". Your last checkpoint is" />
+					<ui:Label text="twelve minutes" />
+					<ui:Label text="behind you and the reactor is still" />
+					<ui:Label text="unstable" class="highlight" />
+					<ui:Label text="." />
+				</ui:Label>
+				<ui:VisualElement class="progress-block">
+					<ui:VisualElement class="progress-header">
+						<ui:Label text="Campaign progress" class="label" />
+						<ui:Label text="42%" class="progress-value" />
+					</ui:VisualElement>
+					<ui:ProgressBar value="42" max="100" />
+				</ui:VisualElement>
+				<ui:VisualElement class="tip">
+					<ui:Label text="i" class="tip-icon" />
+					<ui:Label class="tip-copy" style="flex-direction: row; flex-wrap: wrap;">
+						<ui:Label text="Tip: hold" />
+						<ui:Label text="Shift" />
+						<ui:Label text="to dash. Hold" />
+						<ui:Label text="Space" />
+						<ui:Label text="to hover." />
+					</ui:Label>
+				</ui:VisualElement>
+			</ui:VisualElement>
+			<ui:VisualElement class="panel">
+				<ui:VisualElement class="menu-nav" aria-label="Main menu">
+					<ui:VisualElement class="menu-list">
+						<ui:VisualElement class="menu-row">
+							<ui:Button class="menu-item is-primary data-key:continue" type="button">
+								<ui:Label text="Continue" class="menu-label" />
+								<ui:Label text="Chapter 3 · The Foundry" class="menu-hint" />
+							</ui:Button>
+						</ui:VisualElement>
+						<ui:VisualElement class="menu-row">
+							<ui:Button class="menu-item data-key:new-game" type="button">
+								<ui:Label text="New Game" class="menu-label" />
+								<ui:Label text="Start a fresh run" class="menu-hint" />
+							</ui:Button>
+						</ui:VisualElement>
+						<ui:VisualElement class="menu-row">
+							<ui:Button class="menu-item data-key:load-game" type="button">
+								<ui:Label text="Load Game" class="menu-label" />
+								<ui:Label text="3 saved runs" class="menu-hint" />
+							</ui:Button>
+						</ui:VisualElement>
+						<ui:VisualElement class="menu-row">
+							<ui:Button class="menu-item data-key:extras" type="button">
+								<ui:Label text="Extras" class="menu-label" />
+								<ui:Label text="Codex · Gallery · Soundtrack" class="menu-hint" />
+							</ui:Button>
+						</ui:VisualElement>
+						<ui:VisualElement class="menu-row">
+							<ui:Button class="menu-item is-danger data-key:quit" type="button">
+								<ui:Label text="Quit" class="menu-label" />
+								<ui:Label text="Return to desktop" class="menu-hint" />
+							</ui:Button>
+						</ui:VisualElement>
+					</ui:VisualElement>
+				</ui:VisualElement>
+				<ui:VisualElement class="divider" />
+				<ui:VisualElement class="settings" aria-label="Quick settings">
+					<ui:Label text="Quick settings" class="section-heading" />
+					<ui:VisualElement class="field">
+						<ui:Label text="Callsign" class="field-label" for="callsign" />
+						<ui:TextField class="field-input" id="callsign" type="text" value="Runner-01" placeholder="Enter callsign" />
+					</ui:VisualElement>
+					<ui:VisualElement class="field">
+						<ui:Label text="Master volume" class="field-label" for="master-volume" />
+						<ui:Slider class="field-slider" id="master-volume" low-value="0" high-value="100" type="range" value="70" min="0" max="100" />
+					</ui:VisualElement>
+					<ui:VisualElement class="field field-inline">
+						<ui:Label text="Resolution" class="field-label" for="resolution" />
+						<ui:DropdownField class="field-select" choices="1920 × 1080,2560 × 1440,3840 × 2160" id="resolution" />
+					</ui:VisualElement>
+					<ui:VisualElement class="field field-inline">
+						<ui:Label text="Field of view" class="field-label" for="fov" />
+						<ui:IntegerField class="field-number" id="fov" type="number" value="90" min="60" max="120" />
+					</ui:VisualElement>
+					<ui:VisualElement class="field">
+						<ui:Label text="Difficulty" class="field-label" />
+						<ui:VisualElement class="radio-group">
+							<ui:RadioButton class="radio-input" id="diff-easy" name="difficulty" type="radio" value="easy" />
+							<ui:Label text="Easy" class="radio-label" for="diff-easy" />
+							<ui:RadioButton class="radio-input" id="diff-normal" checked="" name="difficulty" type="radio" value="normal" />
+							<ui:Label text="Normal" class="radio-label" for="diff-normal" />
+							<ui:RadioButton class="radio-input" id="diff-hard" name="difficulty" type="radio" value="hard" />
+							<ui:Label text="Hard" class="radio-label" for="diff-hard" />
+						</ui:VisualElement>
+					</ui:VisualElement>
+					<ui:VisualElement class="toggle-group">
+						<ui:Toggle class="toggle-input" id="fullscreen" checked="" type="checkbox" />
+						<ui:Label text="Fullscreen" class="toggle-label" for="fullscreen" />
+						<ui:Toggle class="toggle-input" id="vsync" type="checkbox" />
+						<ui:Label text="V-Sync" class="toggle-label" for="vsync" />
+						<ui:Toggle class="toggle-input" id="subtitles" checked="" type="checkbox" />
+						<ui:Label text="Subtitles" class="toggle-label" for="subtitles" />
+					</ui:VisualElement>
+					<ui:VisualElement class="button-row">
+						<ui:Button text="Apply" class="button button-primary data-key:apply" type="button" />
+						<ui:Button text="Reset" class="button button-ghost data-key:reset" type="button" />
+						<ui:Label text="Advanced settings" class="link" href="settings.html" />
+					</ui:VisualElement>
+				</ui:VisualElement>
+			</ui:VisualElement>
+		</ui:VisualElement>
+		<ui:VisualElement class="footer">
+			<ui:Label class="legal" style="flex-direction: row; flex-wrap: wrap;">
+				<ui:Label text="© 2026 Fake Skate Studio. Not a real game." />
+			</ui:Label>
+			<ui:VisualElement class="footer-nav" aria-label="Legal">
+				<ui:Label text="Privacy" class="link link-muted" href="#privacy" />
+				<ui:Label text="Terms" class="link link-muted" href="#terms" />
+				<ui:Label text="Credits" class="link link-muted" href="#credits" />
+			</ui:VisualElement>
+		</ui:VisualElement>
+	</ui:VisualElement>
+</ui:UXML>
