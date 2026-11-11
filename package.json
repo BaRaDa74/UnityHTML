@@ -1,0 +1,16 @@
+{
+  "name": "unityhtml-html2uuitk-test",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "HTML -> UI Toolkit conversion fixtures for the Unity project, driven by html2uuitk and verified through unity-mcp.",
+  "scripts": {
+    "convert": "node tools/convert.mjs",
+    "validate": "node tools/validate.mjs",
+    "test": "node tools/convert.mjs && node tools/validate.mjs",
+    "test:unity": "node tools/unity-test.mjs"
+  },
+  "devDependencies": {
+    "html2uuitk": "^0.5.1"
+  }
+}
